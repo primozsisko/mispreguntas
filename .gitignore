@@ -1,0 +1,8 @@
+# Ficheros propios de MAC
+*.DS_Store
+
+*.~
+*.o
+*.class
+*.tgz
+
