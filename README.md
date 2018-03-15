@@ -1,6 +1,14 @@
-mispreguntas
+PROJECT: QUIZZER.
 
-Description in English:
+OBJECTIVE:
 
-The project "mispreguntas" is working around the concept that users can make their own quizzes. It can be useful as a tool to test your knowledge or knowledge of your school mates, 
-when you are preparing for an exam or in many other situations. This can help greatly in the learning process and to see where the user stand in the 
+TEAM DEVELOPMENT MEMBERS:
+
+DESCRIPTION:
+QUIZZER is a platform that allows us to create questions of test type. With this we can evaluate a series of acquired knowledge, evaluate other people, keep a record of our scores and it also allows us to share these tests with other people of interest, etc. 
+
+We have also thought about those teachers, who want to keep a record and thus be able to verify and guarantee the knowledge acquired by their students. For this we will be adding a possibility of being able to configure a series of roles.
+
+SPANISH DESCRIPTION:
+
+TECHNOLOGIES:
