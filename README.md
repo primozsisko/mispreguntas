@@ -1,1 +1,22 @@
-mispreguntas
+## PROJECT: QUIZZER.
+
+### OBJECTIVE:
+
+### TEAM DEVELOPMEND MEMBERS:
+
+*
+*
+*
+
+### DESCRIPTION:
+
+### SPANISH DESCRIPTION:
+
+Plataforma que 
+
+### TECHNOLOGIES:
+
+*
+*
+*
+*
