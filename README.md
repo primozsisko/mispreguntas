@@ -16,18 +16,18 @@ QUIZZER es una plataforma que nos permite poder crear preguntas tipo test. Con e
 
 Tambien hemos pensado en aquellos profesores que desean llevar un registro y asi poder verificar y garantizar el conocimiento adquirido por parte de sus alumnos, añadiendo la posibilidad de poder configurar una serie de roles.  
 
-###ADITIONAL INFORMATION:
+### ADITIONAL INFORMATION:
 In order to develop this project we have 2 options to make:
     *An Android app.
     *An Web app.
 
-###ANDROID APP 
+### ANDROID APP 
 This app will allow the user to create quizzes using server petitions.
 
-###WEB APP
+### WEB APP
 The user will access the web page to login and use the system.
 
-###TECHNOLOGIES:
+### TECHNOLOGIES:
 Depending of which solution we are going to choose we will use the following technologies:
     *github as version control
     *Android Studio 
