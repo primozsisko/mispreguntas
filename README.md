@@ -1,12 +1,5 @@
 ## PROJECT: QUIZZER.
-###ADITIONAL INFORMATION:
-In order to develop this project we have 2 options to make:
-    *An Android app.
-    *An Web app.
 
-###ANDROID APP 
-This app will allow the user to create quizzes using server petitions.
-### OBJECTIVE:
 
 ### TEAM DEVELOPMENT MEMBERS:
 * Plasencia Estrada, Johan Croix.
@@ -23,11 +16,14 @@ QUIZZER es una plataforma que nos permite poder crear preguntas tipo test. Con e
 
 Tambien hemos pensado en aquellos profesores que desean llevar un registro y asi poder verificar y garantizar el conocimiento adquirido por parte de sus alumnos, añadiendo la posibilidad de poder configurar una serie de roles.  
 
-### TECHNOLOGIES:
-*
-*
-*
-*
+###ADITIONAL INFORMATION:
+In order to develop this project we have 2 options to make:
+    *An Android app.
+    *An Web app.
+
+###ANDROID APP 
+This app will allow the user to create quizzes using server petitions.
+
 ###WEB APP
 The user will access the web page to login and use the system.
 
