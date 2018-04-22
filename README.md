@@ -6,6 +6,12 @@
 * Villacorta Betancor, Airán Omar.
 * Sisko, Primoz.
 
+### WEB:
+
+* Project Description: https://primozsisko.github.io/mispreguntas/
+* Project Website: https://primozsisko.github.io/mispreguntas/pagina/
+* Website on the external server: https://quizdsi.000webhostapp.com/
+
 ### DESCRIPTION:
 QUIZZER is a platform that allows us to create questions of test type. With this we can evaluate a series of acquired knowledge, evaluate other people, keep a record of our scores and it also allows us to share these tests with other people of interest, etc. 
 
@@ -29,11 +35,11 @@ The user will access the web page to login and use the system.
 
 ### TECHNOLOGIES:
 Depending of which solution we are going to choose we will use the following technologies:
-* github as version control
+* GitHub as version control
 * Android Studio 
-* Brackets, notepad++
+* Brackets, Notepad++, Sublime Text 3
 * Java 
 * Python
-* HTML CSS Javascript 
+* HTML, CSS, JavaScript 
 * PHP
 * MySql
