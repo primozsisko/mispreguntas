@@ -39,15 +39,12 @@
 }
 
 .profile-userbuttons .btn {
+  background-color: #43A047 !important;
   text-transform: uppercase;
   font-size: 11px;
   font-weight: 600;
   padding: 6px 15px;
   margin-right: 5px;
-}
-
-.profile-userbuttons .btn:last-child {
-  margin-right: 0px;
 }
     
 .profile-usermenu {
@@ -56,12 +53,6 @@
   border-bottom: 1px solid #f0f4f7;
 }
 
-.profile-usermenu ul li {
-}
-
-.profile-usermenu ul li:last-child {
-  border-bottom: none;
-}
 
 .profile-usermenu ul li a {
   color: #93a3b5;
@@ -76,17 +67,13 @@
 
 .profile-usermenu ul li a:hover {
   background-color: #fafcfd;
-  color: #5b9bd1;
-}
-
-.profile-usermenu ul li.active {
-  border-bottom: none;
+  color: #43A047;
 }
 
 .profile-usermenu ul li.active a {
-  color: #5b9bd1;
+  color: #43A047 !important;
   background-color: #f6f9fb;
-  border-left: 2px solid #5b9bd1;
+  border-left: 2px solid #43A047;
   margin-left: -2px;
 }
 
