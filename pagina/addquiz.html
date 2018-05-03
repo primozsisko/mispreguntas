@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+        <title>QUIZZER</title>
+
+        <!-- CSS  -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+
+    </head>
+	<style>
+		.switch label input[type=checkbox]:checked + .lever:after {
+			background-color: #66bb6a;
+		}
+	</style>
+    <body>
+        <nav class="green darken-1" role="navigation">
+            <div class="nav-wrapper container"><a id="logo-container" href="index.html" class="brand-logo">QUIZZER</a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="quizzes.html">Quizzes</a></li>
+                    <li><a href="login.html">Log in</a></li>
+                </ul>
+                <ul id="nav-mobile" class="sidenav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="quizzes.html">Quizzes</a></li>
+                    <li><a href="login.html">Log in</a></li>
+                </ul>
+                <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            </div>
+        </nav>
+			<br></br>
+			<div class="center">
+				<div>
+					<i class="large material-icons grey-text text-lighten-1">note_add</i> 
+				</div>
+				<div>
+					<h2 class="header center green-text text-darken-1">Create quiz</h2>
+				</div>	 
+				</br>
+			</div>
+			
+			<!-- First question -->
+			<div class="row" >
+				<div class="col s3 offset-s2">
+					<h5 class="header green-text text-darken-1">New question</h5>
+				</div>
+			</div>
+			<div class="row" >
+				<div class="col s3 offset-s2">
+					<h6 class="green-text text-darken-1">Choose the question type: </h6>
+				</div>
+			</div>
+			<div class="row" >
+				<div class="col s8 offset-s2">
+					<form class = "green-text text-darken-1" action="showtype1()" >
+						<p>
+						  <label>
+							<input class="with-gap" name="questions1" type="radio" value="textfield1"/>
+							<span>Text field question</span>
+						  </label>
+						</p>
+						<p>
+						  <label>
+							<input class="with-gap" name="questions1" type="radio" value="truefalse1"/>
+							<span>True, false question</span>
+						  </label>
+						</p>
+						<p>
+						  <label>
+							<input class="with-gap" name="questions1" type="radio" value="radio1"/>
+							<span>Radio question</span>
+						  </label>
+						</p>
+					</form>
+				</div>
+			</div>
+			
+			<!-- Text field question -->
+			<div class="textfield1 type" hidden> 
+				<div class="row">
+					<div class="col s3 offset-s2">
+						<h6 class="green-text text-darken-1">Text field type </h6>
+					</div>
+					<div class="col s6 offset-s2 center">
+						<form class = "green-text text-darken-1" action="#">
+							<p>
+								<input id="question" type="text" required>
+								<label for="text">Write the question</label>
+							</p>
+							<p class="z-depth-1">
+								<input id="answ11" type="text" required>
+								<label for="answ21">First answer</label>
+							</p>
+							<div id="answ12" hidden>
+							<p class="z-depth-1">
+								<input type="text">
+								<label for="answ21">Second answer</label>
+							</p>
+							</div>
+							<div id="answ13" hidden>
+							<p class="z-depth-1">
+								<input type="text" >
+								<label for="answ21">Third answer</label>
+							</p>
+							</div>
+						</form>	
+					</div>
+				</div>
+				<div class="row">
+					<div class="col s6 offset-s2 center">
+						<a id="addansw1" class="btn-floating btn-small waves-effect waves-light green darken-1" onclick="showansw1()" >
+							<i class="material-icons">add</i>
+						</a>
+						<a id="hidansw1" class="btn-floating btn-small waves-effect waves-light green darken-1" onclick="hidansw1()" >
+							<i class="material-icons">remove</i>
+						</a>
+					</div>
+					<div class="col s3 offset-s2 center">
+						<a id="previous" class="btn-floating btn-small waves-effect waves-light green darken-1" onclick="">
+							<i class="material-icons">keyboard_arrow_left</i>
+						</a>
+					</div>	
+					<div class="col s3 offset-s2 center">
+						<a id="next" class="btn-floating btn-small waves-effect waves-light green darken-1" onclick="" >
+							<i class="material-icons">keyboard_arrow_right</i>
+						</a>
+					</div>
+				</div>
+			</div>
+			
+			<!-- True, false question -->
+			<div class="truefalse1 type" hidden>
+				<div class="row" >
+					<div class="col s10 offset-s2">
+						<h6 class="green-text">True, false type </h6>
+					</div>
+					<div class="col s6 offset-s2 center " >
+						<form class = "green-text text-darken-1" action="#" >
+							<p>
+								<input id="question2" type="text" required>
+								<label for="question2">Instructions about the multiple choice question</label>
+							</p>
+							</br>
+							</br>
+								<div class="switch">
+									<label>
+									  False
+									  <input type="checkbox">
+									  <span class="lever green darken-1"></span>
+									  True
+									</label>
+								</div>
+							<p class="z-depth-1">
+								<input id="answ21" type="text" required>
+								<label for="answ21">First answer</label>
+							</p>
+							</br>
+								<div class="switch">
+									<label>
+									  False
+									  <input type="checkbox">
+									  <span class="lever green darken-1"></span>
+									  True
+									</label>
+								</div>
+							<p class="z-depth-1">
+								<input id="answ22" type="text" required>
+								<label for="answ22">Second answer</label>
+							</p>
+							</br>
+								<div class="switch">
+									<label>
+									  False
+									  <input value type="checkbox">
+									  <span class="lever green darken-1"></span>
+									  True
+									</label>
+								</div>
+							<p class="z-depth-1">
+								<input id="answ23" type="text" required>
+								<label for="answ23">Third answer</label>
+							</p>
+							<div id="answer24" hidden>
+							
+							</br>
+									<div class="switch">
+										<label>
+										  False
+										  <input type="checkbox">
+										  <span class="lever green darken-1"></span>
+										  True
+										</label>
+									</div>
+								<p class="z-depth-1">
+									<input id="answ24" type="text">
+									<label for="answ24">Fourth answer</label>
+								</p>
+							</div>
+							<div id="answer25" hidden>	
+							</br>	
+									<div class="switch">
+										<label>
+										  False
+										  <input type="checkbox">
+										  <span class="lever green darken-1"></span>
+										  True
+										</label>
+									</div>
+								<p class="z-depth-1">
+									<input id="answ25" type="text">
+									<label for="answ25">Fifth answer</label>
+								</p>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col s6 offset-s2 center">
+						<a id="addansw2" class="btn-floating btn-small waves-effect waves-light green darken-1" onclick="showansw2()" >
+							<i class="material-icons">add</i>
+						</a>
+						<a id="hidansw2" class="btn-floating btn-small waves-effect waves-light green darken-1" onclick="hidansw2()" >
+							<i class="material-icons">remove</i>
+						</a>
+					</div>						
+					</br>
+					<div class="col s3 offset-s2 center">
+						<a id="previous" class="btn-floating btn-small waves-effect waves-light green darken-1" onclick="">
+							<i class="material-icons">keyboard_arrow_left</i>
+						</a>
+					</div>	
+					<div class="col s3 offset-s2 center">
+						<a id="next" class="btn-floating btn-small waves-effect waves-light green darken-1" onclick="" >
+							<i class="material-icons">keyboard_arrow_right</i>
+						</a>
+					</div>		
+				</div>
+			</div>
+			
+			<!-- Radio selection type question -->
+			<div class="radio1 type" hidden>
+				<div class="row" >
+					<div class="col s3 offset-s2">
+						<h6 class="green-text text-darken-1">Radio selection type </h6>
+					</div>
+					<div class="col s6 offset-s2 center">
+						<form class = "green-text text-darken-1" center action="#" >
+							<p>
+								<input id="question3" type="text">
+									<label for="question3">Write the question</label>
+							</p>
+							<p>
+								<label>
+									<input class="with-gap" name="group1" type="radio" />
+									<span></span>
+								</label>
+							</p>
+							<p class="z-depth-1">
+								<input id="answ31" type="text">
+								<label for="answ31">First answer</label>
+							</p>
+							<p>
+								<label>
+									<input class="with-gap" name="group1" type="radio" />
+									<span></span>
+								</label>
+							</p>
+							<p class="z-depth-1">
+								<input id="answ32" type="text">
+								<label for="answ32">Second answer</label>
+
+							</p>
+							<p>
+								<label>
+									<input class="with-gap" name="group1" type="radio" />
+									<span></span>
+								</label>
+							</p>
+							<p class="z-depth-1">
+								<input id="answ33" type="text">
+								<label for="answ33">Third answer</label>
+							</p>
+							<p>
+								<label>
+									<input class="with-gap" name="group1" type="radio" />
+									<span></span>
+								</label>
+							</p>
+							<p class="z-depth-1">
+								<input id="answ34" type="text">
+								<label for="answ34">Fourth answer</label>
+							</p>						
+						</form>
+					</div>
+				</div>
+				<div class="row">
+					</br>
+					<div class="col s3 offset-s2 center">
+						<a id="previous" class="btn-floating btn-small waves-effect waves-light green darken-1" onclick="">
+							<i class="material-icons">keyboard_arrow_left</i>
+						</a>
+					</div>	
+					<div class="col s3 offset-s2 center">
+						<a id="next" class="btn-floating btn-small waves-effect waves-light green darken-1" onclick="" >
+							<i class="material-icons">keyboard_arrow_right</i>
+						</a>
+					</div>		
+				</div>
+			</div>
+			
+			</br>
+			</br>
+			
+			<div class="card-panel grey lighten-4 center">
+				<span class="green-text text-darken-1 center">
+					Here you can take a look at the list of all quizzes. You can search for them in search bar and and find them below. View the quiz by clicking on
+					<i class="small material-icons">pageview</i> and start solving the quiz with a click on<i class="small material-icons">play_arrow</i>
+				</span>
+			</div>
+			</br>
+        </div>
+        <footer class="page-footer green lighten-1">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="white-text">Company Bio</h5>
+                        <p class="grey-text text-lighten-4">We are a team of 3 college students working on this project for the IT systems development subject.</p>
+                    </div>
+                    <div class="col l3 s12">
+                        <h5 class="white-text">Links</h5>
+                        <ul>
+                            <li><a class="white-text" href="index.html">Home</a></li>
+                            <li><a class="white-text" href="about.html">About</a></li>
+                            <li><a class="white-text" href="quizzes.html">Quizzes</a></li>
+                            <li><a class="white-text" href="login.html">Log in</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="green darken-1">
+                <div class="container" >
+                    Made by <a class="green-text text-lighten-3"> Johan, Airan & Primož</a>
+                </div>
+            </div>
+        </footer>
+
+
+        <!--  Scripts-->
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="js/materialize.js"></script>
+        <script src="js/init.js"></script>
+		<script>
+		
+			<!-- Show the question type 1 -->
+			
+			$(document).ready(function(){
+				$('input[name="questions1"]').click(function(){
+					var inputValue = $(this).attr("value");
+					var targetType = $("." + inputValue);
+					$(".type").not(targetType).hide();
+					$(targetType).show();
+				});
+			});
+		
+			<!-- Show/hide the answer of question type text box -->
+			
+			function showansw1() {
+				var x = document.getElementById("answ12");
+				var y = document.getElementById("answ13");
+												
+				if (x.style.display !== "block") {
+					x.style.display = "block";
+				} else { 
+					y.style.display = "block";
+				}
+				
+			}
+			
+			function hidansw1() {
+				var x = document.getElementById("answ12");
+				var y = document.getElementById("answ13");
+			
+				
+				if (x.style.display !== "none" && y.style.display === "none") {
+					x.style.display = "none";
+					x.value = null;
+				} else {
+					y.style.display = "none";
+					y.value = null;
+				}
+			}
+			
+			<!-- Show/hide the answer of question type true false -->
+			
+			function showansw2() {
+				var x = document.getElementById("answer24");
+				var y = document.getElementById("answer25");
+												
+				if (x.style.display !== "block") {
+					x.style.display = "block";
+				} else { 
+					y.style.display = "block";
+				}
+				
+			}
+			
+			function hidansw2() {
+				var x = document.getElementById("answer24");
+				var y = document.getElementById("answer25");
+				var w = document.getElementById("answ24");
+				var z = document.getElementById("answ25");
+				
+				if (x.style.display !== "none" && y.style.display === "none") {
+					x.style.display = "none";
+					w.value = null;
+				} else {
+					y.style.display = "none";
+					z.value = null;
+				}
+			}
+
+		</script>
+
+    </body>
+</html>
+
