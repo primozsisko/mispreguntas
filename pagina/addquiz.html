@@ -377,8 +377,6 @@
 					var checkthird = document.getElementById("#answathirddiv"+questionNumb);
 					
 				if ((typeof checkthird === 'undefined' & typeof checksecond !== 'undefined') | i === 1) {
-					alert(questionNumb);
-						//$("#textfieldform"+questionNumb).append
 						
 						var e = $(""+
 			"				<div >"+
@@ -390,13 +388,11 @@
 						e.attr('div.id', "answathirddiv"+questionNumb);
 						$("#textfieldform"+questionNumb).append(e);
 					
-					alert("Prvi do konca");
-					alert("checkthird: " + document.getElementById("#answathirddiv1").id);
+					alert("Third appended");
+					alert("checkthird: " + document.getElementById("#answathirddiv"+questionNumb)); //here it returns null element, even though it is appended before
 					i++;
 				
 				} else if (typeof checksecond === 'undefined' & i === 0) {
-					alert("Drugi gre");	
-					alert(questionNumb);
 					var formid = "#textfieldform" + questionNumb;
 					$(formid).append(""+
 			"			<div id=\"answaseconddiv"+questionNumb+"\">"+
@@ -406,11 +402,11 @@
 			"				</p>"+
 			"			</div>");
 					
-					alert("Prvi do konca");
-					alert("checkthird: " + document.getElementById("#answaseconddiv1"));
+					alert("Second appended");
+					alert("checksecond: " + document.getElementById("#answaseconddiv"+question));
 					i++;
 				}else{
-					alert("NE gre");
+					alert("No elements appended");
 				}
 			}
 			
@@ -752,8 +748,7 @@
 				});
 				
 				$(document).on("click",'input[name=questions'+question+']',function() {
-						
-					
+							
 						var inputValue = $(this).attr("value");
 						var targetType = $("." + inputValue);
 						$(".type").not(targetType).hide();
