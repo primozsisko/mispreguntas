@@ -45,277 +45,288 @@
 				</div>	 
 				</br>
 			</div>
-			
-			<!-- First question -->
-			<div class="row" >
-				<div class="col s3 offset-s2">
-					<h5 class="header green-text text-darken-1">New question</h5>
-				</div>
-			</div>
-			<div class="row" >
-				<div class="col s3 offset-s2">
-					<h6 class="green-text text-darken-1">Choose the question type: </h6>
-				</div>
-			</div>
-			<div class="row" >
-				<div class="col s8 offset-s2">
-					<form class = "green-text text-darken-1" action="showtype1()" >
-						<p>
-						  <label>
-							<input class="with-gap" name="questions1" type="radio" value="textfield1"/>
-							<span>Text field question</span>
-						  </label>
-						</p>
-						<p>
-						  <label>
-							<input class="with-gap" name="questions1" type="radio" value="truefalse1"/>
-							<span>True, false question</span>
-						  </label>
-						</p>
-						<p>
-						  <label>
-							<input class="with-gap" name="questions1" type="radio" value="radio1"/>
-							<span>Radio question</span>
-						  </label>
-						</p>
-					</form>
-				</div>
-			</div>
-			
-			<!-- Text field question -->
-			<div class="textfield1 type" hidden> 
-				<div class="row">
-					<div class="col s3 offset-s2">
-						<h6 class="green-text text-darken-1">Text field type </h6>
-					</div>
-					<div class="col s6 offset-s2 center">
-						<form class = "green-text text-darken-1" action="#">
-							<p>
-								<input id="question" type="text" required>
-								<label for="text">Write the question</label>
-							</p>
-							<p class="z-depth-1">
-								<input id="answ11" type="text" required>
-								<label for="answ21">First answer</label>
-							</p>
-							<div id="answ12" hidden>
-							<p class="z-depth-1">
-								<input type="text">
-								<label for="answ21">Second answer</label>
-							</p>
-							</div>
-							<div id="answ13" hidden>
-							<p class="z-depth-1">
-								<input type="text" >
-								<label for="answ21">Third answer</label>
-							</p>
-							</div>
-						</form>	
-					</div>
-				</div>
-				<div class="row">
-					<div class="col s6 offset-s2 center">
-						<a id="addansw1" class="btn-floating btn-small waves-effect waves-light green darken-1" onclick="showansw1()" >
-							<i class="material-icons">add</i>
-						</a>
-						<a id="hidansw1" class="btn-floating btn-small waves-effect waves-light green darken-1" onclick="hidansw1()" >
-							<i class="material-icons">remove</i>
-						</a>
-					</div>
-					<div class="col s3 offset-s2 center">
-						<a id="previous" class="btn-floating btn-small waves-effect waves-light green darken-1" onclick="">
-							<i class="material-icons">keyboard_arrow_left</i>
-						</a>
-					</div>	
-					<div class="col s3 offset-s2 center">
-						<a id="next" class="btn-floating btn-small waves-effect waves-light green darken-1" onclick="" >
-							<i class="material-icons">keyboard_arrow_right</i>
-						</a>
-					</div>
-				</div>
-			</div>
-			
-			<!-- True, false question -->
-			<div class="truefalse1 type" hidden>
-				<div class="row" >
-					<div class="col s10 offset-s2">
-						<h6 class="green-text">True, false type </h6>
-					</div>
-					<div class="col s6 offset-s2 center " >
-						<form class = "green-text text-darken-1" action="#" >
-							<p>
-								<input id="question2" type="text" required>
-								<label for="question2">Instructions about the multiple choice question</label>
-							</p>
-							</br>
-							</br>
-								<div class="switch">
-									<label>
-									  False
-									  <input type="checkbox">
-									  <span class="lever green darken-1"></span>
-									  True
-									</label>
-								</div>
-							<p class="z-depth-1">
-								<input id="answ21" type="text" required>
-								<label for="answ21">First answer</label>
-							</p>
-							</br>
-								<div class="switch">
-									<label>
-									  False
-									  <input type="checkbox">
-									  <span class="lever green darken-1"></span>
-									  True
-									</label>
-								</div>
-							<p class="z-depth-1">
-								<input id="answ22" type="text" required>
-								<label for="answ22">Second answer</label>
-							</p>
-							</br>
-								<div class="switch">
-									<label>
-									  False
-									  <input value type="checkbox">
-									  <span class="lever green darken-1"></span>
-									  True
-									</label>
-								</div>
-							<p class="z-depth-1">
-								<input id="answ23" type="text" required>
-								<label for="answ23">Third answer</label>
-							</p>
-							<div id="answer24" hidden>
-							
-							</br>
-									<div class="switch">
-										<label>
-										  False
-										  <input type="checkbox">
-										  <span class="lever green darken-1"></span>
-										  True
-										</label>
-									</div>
-								<p class="z-depth-1">
-									<input id="answ24" type="text">
-									<label for="answ24">Fourth answer</label>
-								</p>
-							</div>
-							<div id="answer25" hidden>	
-							</br>	
-									<div class="switch">
-										<label>
-										  False
-										  <input type="checkbox">
-										  <span class="lever green darken-1"></span>
-										  True
-										</label>
-									</div>
-								<p class="z-depth-1">
-									<input id="answ25" type="text">
-									<label for="answ25">Fifth answer</label>
-								</p>
-							</div>
-						</form>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col s6 offset-s2 center">
-						<a id="addansw2" class="btn-floating btn-small waves-effect waves-light green darken-1" onclick="showansw2()" >
-							<i class="material-icons">add</i>
-						</a>
-						<a id="hidansw2" class="btn-floating btn-small waves-effect waves-light green darken-1" onclick="hidansw2()" >
-							<i class="material-icons">remove</i>
-						</a>
-					</div>						
-					</br>
-					<div class="col s3 offset-s2 center">
-						<a id="previous" class="btn-floating btn-small waves-effect waves-light green darken-1" onclick="">
-							<i class="material-icons">keyboard_arrow_left</i>
-						</a>
-					</div>	
-					<div class="col s3 offset-s2 center">
-						<a id="next" class="btn-floating btn-small waves-effect waves-light green darken-1" onclick="" >
-							<i class="material-icons">keyboard_arrow_right</i>
-						</a>
-					</div>		
-				</div>
-			</div>
-			
-			<!-- Radio selection type question -->
-			<div class="radio1 type" hidden>
-				<div class="row" >
-					<div class="col s3 offset-s2">
-						<h6 class="green-text text-darken-1">Radio selection type </h6>
-					</div>
-					<div class="col s6 offset-s2 center">
-						<form class = "green-text text-darken-1" center action="#" >
-							<p>
-								<input id="question3" type="text">
-									<label for="question3">Write the question</label>
-							</p>
-							<p>
-								<label>
-									<input class="with-gap" name="group1" type="radio" />
-									<span></span>
-								</label>
-							</p>
-							<p class="z-depth-1">
-								<input id="answ31" type="text">
-								<label for="answ31">First answer</label>
-							</p>
-							<p>
-								<label>
-									<input class="with-gap" name="group1" type="radio" />
-									<span></span>
-								</label>
-							</p>
-							<p class="z-depth-1">
-								<input id="answ32" type="text">
-								<label for="answ32">Second answer</label>
 
+			<!-- Div question 
+			<div class="container">
+				<!-- Type of question 
+				<div class="row" >
+					<div class="col s3 offset-s2">
+						<h5 class="header green-text text-darken-1">New question</h5>
+					</div>
+				</div>
+				<div class="row" >
+					<div class="col s3 offset-s2">
+						<h6 class="green-text text-darken-1">Choose the question type: </h6>
+					</div>
+				</div>
+				<div class="row" >
+					<div class="col s8 offset-s2">
+						<form class = "green-text text-darken-1">
+							<p>
+							  <label>
+								<input class="with-gap" name="questions1" type="radio" value="textfield1"/>
+								<span>Text field question</span>
+							  </label>
 							</p>
 							<p>
-								<label>
-									<input class="with-gap" name="group1" type="radio" />
-									<span></span>
-								</label>
-							</p>
-							<p class="z-depth-1">
-								<input id="answ33" type="text">
-								<label for="answ33">Third answer</label>
+							  <label>
+								<input class="with-gap" name="questions1" type="radio" value="truefalse1"/>
+								<span>True, false question</span>
+							  </label>
 							</p>
 							<p>
-								<label>
-									<input class="with-gap" name="group1" type="radio" />
-									<span></span>
-								</label>
+							  <label>
+								<input class="with-gap" name="questions1" type="radio" value="radio1"/>
+								<span>Radio question</span>
+							  </label>
 							</p>
-							<p class="z-depth-1">
-								<input id="answ34" type="text">
-								<label for="answ34">Fourth answer</label>
-							</p>						
 						</form>
 					</div>
 				</div>
-				<div class="row">
-					</br>
-					<div class="col s3 offset-s2 center">
-						<a id="previous" class="btn-floating btn-small waves-effect waves-light green darken-1" onclick="">
-							<i class="material-icons">keyboard_arrow_left</i>
-						</a>
-					</div>	
-					<div class="col s3 offset-s2 center">
-						<a id="next" class="btn-floating btn-small waves-effect waves-light green darken-1" onclick="" >
-							<i class="material-icons">keyboard_arrow_right</i>
-						</a>
-					</div>		
+				
+				<!-- Text field question 
+				<div class="textfield1 type" hidden> 
+					<div class="row">
+						<div class="col s3 offset-s2">
+							<h6 class="green-text text-darken-1">Text field type </h6>
+						</div>
+						<div class="col s6 offset-s2 center">
+							<form class = "green-text text-darken-1" action="#">
+								<p>
+									<input id="question" type="text" required>
+									<label for="text">Write the question</label>
+								</p>
+								<p class="z-depth-1">
+									<input id="answ11" type="text" required>
+									<label for="answ21">First answer</label>
+								</p>
+								<div id="answ12" hidden>
+								<p class="z-depth-1">
+									<input type="text">
+									<label for="answ21">Second answer</label>
+								</p>
+								</div>
+								<div id="answ13" hidden>
+								<p class="z-depth-1">
+									<input type="text" >
+									<label for="answ21">Third answer</label>
+								</p>
+								</div>
+							</form>	
+						</div>
+					</div>
+					<div class="row">
+						<div class="col s6 offset-s2 center">
+							<a id="addansw1" class="btn-floating btn-small waves-effect waves-light green darken-1" onclick="showansw1()" >
+								<i class="material-icons">add</i>
+							</a>
+							<a id="hidansw1" class="btn-floating btn-small waves-effect waves-light green darken-1" onclick="hidansw1()" >
+								<i class="material-icons">remove</i>
+							</a>
+						</div>
+						<div class="col s3 offset-s2 center">
+							<a id="previous" class="btn-floating btn-small waves-effect waves-light green darken-1" onclick="">
+								<i class="material-icons">keyboard_arrow_left</i>
+							</a>
+						</div>	
+						<div class="col s3 offset-s2 center">
+							<a id="next" class="btn-floating btn-small waves-effect waves-light green darken-1" onclick="" >
+								<i class="material-icons">keyboard_arrow_right</i>
+							</a>
+						</div>
+					</div>
 				</div>
+				
+				<!-- True, false question
+				<div class="truefalse1 type" hidden>
+					<div class="row" >
+						<div class="col s10 offset-s2">
+							<h6 class="green-text">True, false type </h6>
+						</div>
+						<div class="col s6 offset-s2 center " >
+							<form class = "green-text text-darken-1" action="#" >
+								<p>
+									<input id="question2" type="text" required>
+									<label for="question2">Instructions about the multiple choice question</label>
+								</p>
+								</br>
+								</br>
+									<div class="switch">
+										<label>
+										  False
+										  <input type="checkbox">
+										  <span class="lever green darken-1"></span>
+										  True
+										</label>
+									</div>
+								<p class="z-depth-1">
+									<input id="answ21" type="text" required>
+									<label for="answ21">First answer</label>
+								</p>
+								</br>
+									<div class="switch">
+										<label>
+										  False
+										  <input type="checkbox">
+										  <span class="lever green darken-1"></span>
+										  True
+										</label>
+									</div>
+								<p class="z-depth-1">
+									<input id="answ22" type="text" required>
+									<label for="answ22">Second answer</label>
+								</p>
+								</br>
+									<div class="switch">
+										<label>
+										  False
+										  <input value type="checkbox">
+										  <span class="lever green darken-1"></span>
+										  True
+										</label>
+									</div>
+								<p class="z-depth-1">
+									<input id="answ23" type="text" required>
+									<label for="answ23">Third answer</label>
+								</p>
+								<div id="answer24" hidden>
+								
+								</br>
+										<div class="switch">
+											<label>
+											  False
+											  <input type="checkbox">
+											  <span class="lever green darken-1"></span>
+											  True
+											</label>
+										</div>
+									<p class="z-depth-1">
+										<input id="answ24" type="text">
+										<label for="answ24">Fourth answer</label>
+									</p>
+								</div>
+								<div id="answer25" hidden>	
+								</br>	
+										<div class="switch">
+											<label>
+											  False
+											  <input type="checkbox">
+											  <span class="lever green darken-1"></span>
+											  True
+											</label>
+										</div>
+									<p class="z-depth-1">
+										<input id="answ25" type="text">
+										<label for="answ25">Fifth answer</label>
+									</p>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col s6 offset-s2 center">
+							<a id="addansw2" class="btn-floating btn-small waves-effect waves-light green darken-1" onclick="showansw2()" >
+								<i class="material-icons">add</i>
+							</a>
+							<a id="hidansw2" class="btn-floating btn-small waves-effect waves-light green darken-1" onclick="hidansw2()" >
+								<i class="material-icons">remove</i>
+							</a>
+						</div>						
+						</br>
+						<div class="col s3 offset-s2 center">
+							<a id="previous" class="btn-floating btn-small waves-effect waves-light green darken-1" onclick="">
+								<i class="material-icons">keyboard_arrow_left</i>
+							</a>
+						</div>	
+						<div class="col s3 offset-s2 center">
+							<a id="next" class="btn-floating btn-small waves-effect waves-light green darken-1" onclick="" >
+								<i class="material-icons">keyboard_arrow_right</i>
+							</a>
+						</div>		
+					</div>
+				</div>
+				
+				<!-- Radio selection type question
+				<div class="radio1 type" hidden>
+					<div class="row" >
+						<div class="col s3 offset-s2">
+							<h6 class="green-text text-darken-1">Radio selection type </h6>
+						</div>
+						<div class="col s6 offset-s2 center">
+							<form class = "green-text text-darken-1" center action="#" >
+								<p>
+									<input id="question3" type="text">
+										<label for="question3">Write the question</label>
+								</p>
+								<p>
+									<label>
+										<input class="with-gap" name="group1" type="radio" />
+										<span></span>
+									</label>
+								</p>
+								<p class="z-depth-1">
+									<input id="answ31" type="text">
+									<label for="answ31">First answer</label>
+								</p>
+								<p>
+									<label>
+										<input class="with-gap" name="group1" type="radio" />
+										<span></span>
+									</label>
+								</p>
+								<p class="z-depth-1">
+									<input id="answ32" type="text">
+									<label for="answ32">Second answer</label>
+
+								</p>
+								<p>
+									<label>
+										<input class="with-gap" name="group1" type="radio" />
+										<span></span>
+									</label>
+								</p>
+								<p class="z-depth-1">
+									<input id="answ33" type="text">
+									<label for="answ33">Third answer</label>
+								</p>
+								<p>
+									<label>
+										<input class="with-gap" name="group1" type="radio" />
+										<span></span>
+									</label>
+								</p>
+								<p class="z-depth-1">
+									<input id="answ34" type="text">
+									<label for="answ34">Fourth answer</label>
+								</p>						
+							</form>
+						</div>
+					</div>
+					<div class="row">
+						</br>
+						<div class="col s3 offset-s2 center">
+							<a id="previous" class="btn-floating btn-small waves-effect waves-light green darken-1" onclick="">
+								<i class="material-icons">keyboard_arrow_left</i>
+							</a>
+						</div>	
+						<div class="col s3 offset-s2 center">
+							<a id="next" class="btn-floating btn-small waves-effect waves-light green darken-1" onclick="" >
+								<i class="material-icons">keyboard_arrow_right</i>
+							</a>
+						</div>		
+					</div>
+				</div> 
+			</div>-->
+				</br>
+				</br>
+			<div id="append" class="container">
+				
 			</div>
-			
-			</br>
+			<div class="center">
+				<a id="btnappend" class="btn-floating btn-large waves-effect waves-light green darken-1" >
+					<i class="material-icons">add</i>
+				</a>
+			</div>
 			</br>
 			
 			<div class="card-panel grey lighten-4 center">
@@ -356,34 +367,55 @@
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script src="js/materialize.js"></script>
         <script src="js/init.js"></script>
-		<script>
-		
-			<!-- Show the question type 1 -->
-			
-			$(document).ready(function(){
-				$('input[name="questions1"]').click(function(){
-					var inputValue = $(this).attr("value");
-					var targetType = $("." + inputValue);
-					$(".type").not(targetType).hide();
-					$(targetType).show();
-				});
-			});
-		
-			<!-- Show/hide the answer of question type text box -->
-			
-			function showansw1() {
-				var x = document.getElementById("answ12");
-				var y = document.getElementById("answ13");
-												
-				if (x.style.display !== "block") {
-					x.style.display = "block";
-				} else { 
-					y.style.display = "block";
-				}
+		<script>			
+			var i = 0;
+			function showAnswTextFieldA() {
+					
+				if(document.getElementById("#answaseconddiv"+questionNumb)!==null)
+					var checksecond = document.getElementById("#answaseconddiv"+questionNumb);
+				if(document.getElementById("#answathirddiv"+questionNumb)!==null)
+					var checkthird = document.getElementById("#answathirddiv"+questionNumb);
+					
+				if ((typeof checkthird === 'undefined' & typeof checksecond !== 'undefined') | i === 1) {
+					alert(questionNumb);
+						//$("#textfieldform"+questionNumb).append
+						
+						var e = $(""+
+			"				<div >"+
+			"					<p class=\"z-depth-1\">"+
+			"						<input id=\"answathird"+questionNumb+"\"type=\"text\" >"+
+			"						<label for=\"answathird"+questionNumb+"\">Third answer</label>"+
+			"					</p>"+
+			"				</div>");
+						e.attr('div.id', "answathirddiv"+questionNumb);
+						$("#textfieldform"+questionNumb).append(e);
+					
+					alert("Prvi do konca");
+					alert("checkthird: " + document.getElementById("#answathirddiv1").id);
+					i++;
 				
+				} else if (typeof checksecond === 'undefined' & i === 0) {
+					alert("Drugi gre");	
+					alert(questionNumb);
+					var formid = "#textfieldform" + questionNumb;
+					$(formid).append(""+
+			"			<div id=\"answaseconddiv"+questionNumb+"\">"+
+			"				<p class=\"z-depth-1\">"+
+			"					<input id=\"answasecond"+questionNumb+"\" type=\"text\">"+ 
+			"						<label for=\"answasecond"+questionNumb+"\">Second answer</label>"+
+			"				</p>"+
+			"			</div>");
+					
+					alert("Prvi do konca");
+					alert("checkthird: " + document.getElementById("#answaseconddiv1"));
+					i++;
+				}else{
+					alert("NE gre");
+				}
 			}
 			
-			function hidansw1() {
+			function hideAnswTextFieldA() {
+			
 				var x = document.getElementById("answ12");
 				var y = document.getElementById("answ13");
 			
@@ -399,9 +431,9 @@
 			
 			<!-- Show/hide the answer of question type true false -->
 			
-			function showansw2() {
-				var x = document.getElementById("answer24");
-				var y = document.getElementById("answer25");
+			function showAnswTextFieldB(addanswasecond, addanswthird) {
+				var x = document.getElementById(addanswasecond);
+				var y = document.getElementById(addanswthird);
 												
 				if (x.style.display !== "block") {
 					x.style.display = "block";
@@ -411,7 +443,7 @@
 				
 			}
 			
-			function hidansw2() {
+			function hideAnswTextFieldB() {
 				var x = document.getElementById("answer24");
 				var y = document.getElementById("answer25");
 				var w = document.getElementById("answ24");
@@ -425,9 +457,319 @@
 					z.value = null;
 				}
 			}
+		</script>
+		<script>
+		
+		var question = 0;
+		var questionNumb = 0;
+		$(document).ready(function(){
+			$(document).on("click","#btnappend",function() {
+				++question;	
+				var htmltype = "" +
+	"			<div class=\"row\" >"+
+	"				<div class=\"col s3 offset-s2\">"+
+	"					<h5 class=\"header green-text text-darken-1\">"+question+". question</h5>"+
+	"				</div>"+
+	"			</div>"+
+	"			<div class=\"row\" >"+
+	"				<div class=\"col s3 offset-s2\">"+
+	"					<h6 class=\"green-text text-darken-1\">Choose the question type: </h6>"+
+	"				</div>"+
+	"			</div>"+
+	"			<div class=\"row\" >"+
+	"				<div class=\"col s8 offset-s2\">"+
+	"					<form class = \"green-text text-darken-1\">"+
+	"						<p>"+
+	"						  <label>"+
+	"							<input class=\"with-gap\" name=\"questions"+question+"\" type=\"radio\" value=\"textfield"+question+"\" id=\"textfield"+question+"\"/>"+
+	"							<span>Text field question</span>"+
+	"						  </label>"+
+	"						</p>"+
+	"						<p>"+
+	"						  <label>"+
+	"							<input class=\"with-gap\" name=\"questions"+question+"\" type=\"radio\" value=\"truefalse"+question+"\" id=\"truefalse"+question+"\"/>"+
+	"							<span>True, false question</span>"+
+	"						  </label>"+
+	"						</p>"+
+	"						<p>"+
+	"						  <label>"+
+	"							<input class=\"with-gap\" name=\"questions"+question+"\" type=\"radio\" value=\"radio"+question+"\" id=\"radio"+question+"\"/>"+
+	"							<span>Radio question</span>"+
+	"						  </label>"+
+	"						</p>"+
+	"					</form>"+
+	"				</div>"+
+	"			</div>";
+
+				var htmltextf = "\n" + 
+	"				<div class=\"type textfield"+question+"\" hidden> "+ //example: textfield1,texfield43 
+	"					<div class=\"row\">"+
+	"						<div class=\"col s3 offset-s2\">"+
+	"							<h6 class=\"green-text text-darken-1\">Text field type </h6>"+
+	"						</div>"+
+	"						<div class=\"col s6 offset-s2 center\">"+
+	"							<form id=\"textfieldform"+question+"\" class = \"green-text text-darken-1\" action=\"#\">"+
+	"								<p>"+
+	"									<input id=\"questiona"+question+"\" type=\"text\" required>"+  //example: questiona1, questiona43
+	"									<label for=\"questiona"+question+"\">Write the question</label>"+
+	"								</p>"+
+	"								<p class=\"z-depth-1\">"+
+	"									<input id=\"answafirst"+question+"\" type=\"text\" required>"+
+	"									<label for=\"answafirst"+question+"\">First answer</label>"+
+	"								</p>"+
+	"							</form>	"+
+	"						</div>"+
+	"					</div>"+
+	"					<div class=\"row\">"+
+	"						<div class=\"col s6 offset-s2 center\">"+
+	"							<a id=\"addanswa"+question+"\" class=\"btn-floating btn-small waves-effect waves-light green darken-1\">"+
+	"								<i class=\"material-icons\">add</i>"+
+	"							</a>"+
+	"							<a id=\"hidanswa"+question+"\" class=\"btn-floating btn-small waves-effect waves-light green darken-1\">"+
+	"								<i class=\"material-icons\">remove</i>"+
+	"							</a>"+
+	"						</div>"+
+	"						<div class=\"col s3 offset-s2 center\">"+
+	"							<a id=\"previousa"+question+"\" class=\"btn-floating btn-small waves-effect waves-light green darken-1\">"+
+	"								<i class=\"material-icons\">keyboard_arrow_left</i>"+
+	"							</a>"+
+	"						</div>	"+
+	"						<div class=\"col s3 offset-s2 center\">"+
+	"							<a id=\"nexta"+question+"\" class=\"btn-floating btn-small waves-effect waves-light green darken-1\">"+
+	"								<i class=\"material-icons\">keyboard_arrow_right</i>"+
+	"							</a>"+
+	"						</div>"+
+	"					</div>"+
+	"				</div>";
+	
+				var htmltruefalse = "\n"+
+					"<div class=\"type truefalse"+question+"\" hidden>"+  //example: truefalse1, truefalse43
+	"					<div class=\"row\" >"+
+	"						<div class=\"col s10 offset-s2\">"+
+	"							<h6 class=\"green-text\">True, false type </h6>"+
+	"						</div>"+
+	"						<div class=\"col s6 offset-s2 center \" >"+
+	"							<form class = \"green-text text-darken-1\" action=\"#\" >"+
+	"								<p>"+
+	"									<input id=\"questionb"+question+"\" type=\"text\" required>"+  //example: questionb1, questionb43
+	"									<label for=\"questionb"+question+"\">Instructions about the multiple choice question</label>"+
+	"								</p>"+
+	"								</br>"+
+	"								</br>"+
+	"									<div class=\"switch\">"+
+	"										<label>"+
+	"										  False"+
+	"										  <input id=\"truefalsebfirst"+question+"\" type=\"checkbox\">"+ 
+	"										  <span class=\"lever green darken-1\"></span>"+
+	"										  True"+
+	"										</label>"+
+	"									</div>"+
+	"								<p class=\"z-depth-1\">"+
+	"									<input id=\"answbfirst"+question+"\" type=\"text\" required>"+ //example answbfirst1, answbfirst43
+	"									<label for=\"answbfirst"+question+"\" >First answer</label>"+
+	"								</p>"+
+	"								</br>"+
+	"									<div class=\"switch\">"+
+	"										<label>"+
+	"										  False"+
+	"										  <input id=\"truefalsebsecond"+question+"\" type=\"checkbox\">"+ //example: truefalsebsecond1, truefalsebsecond43
+	"										  <span class=\"lever green darken-1\"></span>"+
+	"										  True"+
+	"										</label>"+
+	"									</div>"+
+	"								<p class=\"z-depth-1\">"+
+	"									<input id=\"answbsecond"+question+"\" type=\"text\" required>"+
+	"									<label for=\"answbsecond"+question+"\">Second answer</label>"+
+	"								</p>"+
+	"								</br>"+
+	"									<div class=\"switch\">"+
+	"										<label>"+
+	"										  False"+
+	"										  <input id=\"truefalsebthird"+question+"\" type=\"checkbox\">"+
+	"										  <span class=\"lever green darken-1\"></span>"+
+	"										  True"+
+	"										</label>"+
+	"									</div>"+
+	"								<p class=\"z-depth-1\">"+
+	"									<input id=\"answbthird"+question+"\" type=\"text\" required>"+
+	"									<label for=\"answbthird"+question+"\" >Third answer</label>"+
+	"								</p>"+
+	"								<div id=\"answbfourthdiv"+question+"\" hidden>"+  //example: answbfourthdiv1, answbfourthdiv43
+	"								"+
+	"								</br>"+
+	"										<div class=\"switch\">"+
+	"											<label>"+
+	"											  False"+
+	"											  <input id=\"truefalsebfourth"+question+"\" type=\"checkbox\">"+
+	"											  <span class=\"lever green darken-1\"></span>"+
+	"											  True"+
+	"											</label>"+
+	"										</div>"+
+	"									<p class=\"z-depth-1\">"+
+	"										<input id=\"answbfourth"+question+"\" type=\"text\">"+
+	"										<label for=\"answbfourth"+question+"\">Fourth answer</label>"+
+	"									</p>"+
+	"								</div>"+
+	"								<div id=\"answbfifthdiv"+question+"\" hidden>	"+
+	"								</br>	"+
+	"										<div class=\"switch\">"+
+	"											<label>"+
+	"											  False"+
+	"											  <input id=\"truefalsebfifth"+question+"\" type=\"checkbox\">"+
+	"											  <span class=\"lever green darken-1\"></span>"+
+	"											  True"+
+	"											</label>"+
+	"										</div>"+
+	"									<p class=\"z-depth-1\">"+
+	"										<input id=\"answbfifth"+question+"\" type=\"text\">"+
+	"										<label for=\"answbfifth"+question+"\">Fifth answer</label>"+
+	"									</p>"+
+	"								</div>"+
+	"							</form>"+
+	"						</div>"+
+	"					</div>"+
+	"					<div class=\"row\">"+
+	"						<div class=\"col s6 offset-s2 center\">"+
+	"							<a id=\"addansw2\" class=\"btn-floating btn-small waves-effect waves-light green darken-1\" onclick=\"showansw2()\" >"+
+	"								<i class=\"material-icons\">add</i>"+
+	"							</a>"+
+	"							<a id=\"hidansw2\" class=\"btn-floating btn-small waves-effect waves-light green darken-1\" onclick=\"hidansw2()\" >"+
+	"								<i class=\"material-icons\">remove</i>"+
+	"							</a>"+
+	"						</div>						"+
+	"						</br>"+
+	"						<div class=\"col s3 offset-s2 center\">"+
+	"							<a id=\"previous\" class=\"btn-floating btn-small waves-effect waves-light green darken-1\" onclick=\"\">"+
+	"								<i class=\"material-icons\">keyboard_arrow_left</i>"+
+	"							</a>"+
+	"						</div>	"+
+	"						<div class=\"col s3 offset-s2 center\">"+
+	"							<a id=\"next\" class=\"btn-floating btn-small waves-effect waves-light green darken-1\" onclick=\"\" >"+
+	"								<i class=\"material-icons\">keyboard_arrow_right</i>"+
+	"							</a>"+
+	"						</div>		"+
+	"					</div>"+
+	"				</div>";
+	
+				var htmlradio = "\n"+
+	"				<div class=\"type radio"+question+"\" hidden>"+
+	"					<div class=\"row\" >"+
+	"						<div class=\"col s3 offset-s2\">"+
+	"							<h6 class=\"green-text text-darken-1\">Radio selection type </h6>"+
+	"						</div>"+
+	"						<div class=\"col s6 offset-s2 center\">"+
+	"							<form class = \"green-text text-darken-1\" center action=\"#\" >"+
+	"								<p>"+
+	"									<input id=\"questionc"+question+"\" type=\"text\">"+
+	"									<label for=\"questionc"+question+"\">Write the question</label>"+
+	"								</p>"+
+	"								<p>"+
+	"									<label>"+
+	"										<input id=\"truefalsecfirst"+question+"\" class=\"with-gap\" name=\"group1\" type=\"radio\" />"+
+	"										<span></span>"+
+	"									</label>"+
+	"								</p>"+
+	"								<p class=\"z-depth-1\">"+
+	"									<input id=\"answcfirst"+question+"\" type=\"text\">"+
+	"									<label for=\"answcfirst"+question+"\">First answer</label>"+
+	"								</p>"+
+	"								<p>"+
+	"									<label>"+
+	"										<input id=\"truefalsecsecond"+question+"\" class=\"with-gap\" name=\"groupc"+question+"\" type=\"radio\" />"+
+	"										<span></span>"+
+	"									</label>"+
+	"								</p>"+
+	"								<p class=\"z-depth-1\">"+
+	"									<input id=\"answcsecond"+question+"\" type=\"text\">"+
+	"									<label for=\"answcsecond"+question+"\">Second answer</label>"+
+	"								</p>"+
+	"								<p>"+
+	"									<label>"+
+	"										<input id=\"truefalsecthird"+question+"\" class=\"with-gap\" name=\"groupc"+question+"\" type=\"radio\" />"+
+	"										<span></span>"+
+	"									</label>"+
+	"								</p>"+
+	"								<p class=\"z-depth-1\">"+
+	"									<input id=\"answcthird"+question+"\" type=\"text\">"+
+	"									<label for=\"answcthird"+question+"\">Third answer</label>"+
+	"								</p>"+
+	"								<p>"+
+	"									<label>"+
+	"										<input id=\"truefalsecfourth"+question+"\" class=\"with-gap\" name=\"groupc"+question+"\" type=\"radio\" />"+
+	"										<span></span>"+
+	"									</label>"+
+	"								</p>"+
+	"								<p class=\"z-depth-1\">"+
+	"									<input id=\"answcfourth"+question+"\" type=\"text\">"+
+	"									<label for=\"answcfourth"+question+"\">Fourth answer</label>"+
+	"								</p>"+
+	"							</form>"+
+	"						</div>"+
+	"					</div>"+
+	"					<div class=\"row\">"+
+	"						</br>"+
+	"						<div class=\"col s3 offset-s2 center\">"+
+	"							<a id=\"previous\" class=\"btn-floating btn-small waves-effect waves-light green darken-1\" onclick=\"\">"+
+	"								<i class=\"material-icons\">keyboard_arrow_left</i>"+
+	"							</a>"+
+	"						</div>	"+
+	"						<div class=\"col s3 offset-s2 center\">"+
+	"							<a id=\"next\" class=\"btn-floating btn-small waves-effect waves-light green darken-1\" onclick=\"\" >"+
+	"								<i class=\"material-icons\">keyboard_arrow_right</i>"+
+	"							</a>"+
+	"						</div>		"+
+	"					</div>"+
+	"				</div>";
+				
+
+	
+				$('#append').append(htmltype + htmltextf + htmltruefalse + htmlradio);
+				
+				
+				$('#addanswa'+question).click(function() {
+							
+					showAnswTextFieldA();
+						
+				});
+				
+										
+				$(document).on("click","#hidanswa"+question+'',function() {
+						
+					alert(this.id);
+					
+				});
+					
+				$(document).on("click",'#previousa'+question+'',function() {
+						
+					alert(this.id);
+					
+				});
+					
+				$(document).on("click",'#nexta'+question+'',function() {
+						
+					alert(this.id);
+					
+				});
+				
+				$(document).on("click",'input[name=questions'+question+']',function() {
+						
+					
+						var inputValue = $(this).attr("value");
+						var targetType = $("." + inputValue);
+						$(".type").not(targetType).hide();
+						$(targetType).show();
+						questionNumb = question;
+						i = 0;
+		
+				});
+			});
+			
+		});
 
 		</script>
+		<script>
+			
+		</script>
 
-    </body>
+	</body>
 </html>
-
