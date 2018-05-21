@@ -62,4 +62,21 @@ function create_user($usuario, $password, $firstname, $lastname, $email){
 	return true;
 }
 
+function validate_user($usuario, $password){
+	$conexion = conect_bbdd();
+
+  	$registros = mysqli_query($conexion,"select Usu_name, Usu_pass from User where Usu_name='".$usuario."' and Usu_pass='".$password."'") or
+  		die("Problemas en el select:".mysqli_error($conexion));
+
+	if ($reg = mysqli_fetch_array($registros)){
+		disconect_bbdd($conexion);
+		
+		return true;
+
+	}else{
+		disconect_bbdd($conexion);
+		return false;
+	}
+}
+
 ?>

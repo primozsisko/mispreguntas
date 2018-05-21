@@ -1,35 +1,21 @@
 <?php
 include_once 'controller.php';
 
-$status = true;
-
-
 if(isset($_POST['submit']) && $_SERVER['REQUEST_METHOD'] == 'POST'){
     $usuario = $_POST['username'];
     $password = $_POST['password'];
-    $firstname = $_POST['firstname'];
-    $lastname = $_POST['lastname'];
-    $email = $_POST['email'];
 
-    $errores = validate_form_signup($usuario, $password, $firstname, $lastname, $email);
-
-    // Si el array $errores está vacío, se aceptan los datos y se asignan a variables
-    if(sizeof($errores) == 0) {
-        create_user($usuario, $password, $firstname, $lastname, $email);
-        echo "Enviado";
-        $status = true;
+    if($usuario != '' && $password != '') {
+        if(validate_user($usuario, $password)){
+            //echo "Validado correctamente";
+            header("Location: loggeduser.html");
+        }else{
+            echo "Error: En usuario o contraseña";
+        }        
     }else{
-        $status = false;
-        echo "Errores en el Formato:<br>";
-        foreach ($errores as $error){
-            echo "<li> $error </li>";
-        }
+        echo "Error: No puedes dejar campos vacios.<br>";
     }
 }
-
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -69,7 +55,7 @@ if(isset($_POST['submit']) && $_SERVER['REQUEST_METHOD'] == 'POST'){
 
 
 
- <h2 class="header center green-text green-lighten-2">Sign up</h2>
+ <h2 class="header center green-text green-lighten-2">Log In</h2>
 <br>
         <div class="container">
 
@@ -80,36 +66,15 @@ if(isset($_POST['submit']) && $_SERVER['REQUEST_METHOD'] == 'POST'){
                         <div class="row">
                             <div class="input-field col s6 offset-s3">
                                 <i class="material-icons prefix">account_circle</i>
-                                <input name="username" type="text" <?php if(!$status){ echo 'value="'.$usuario.'"'; } ?> class="validate">
+                                <input id="username" name="username" type="text" class="validate">
                                 <label for="username">User Name</label>
                             </div> 
                         </div> 
                         <div class="row">
                             <div class="input-field col s6 offset-s3">
                                 <i class="material-icons prefix">lock</i>
-                                <input name="password" type="password" class="validate">
+                                <input id="password" name="password" type="password" class="validate">
                                 <label for="password">Password</label>
-                            </div>   
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s6 offset-s3">
-                                <i class="material-icons prefix">account_circle</i>
-                                <input name="firstname" type="text" <?php if(!$status){ echo 'value="'.$firstname.'"'; } ?> class="validate">
-                                <label for="firstname">First Name</label>
-                            </div>   
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s6 offset-s3">
-                                <i class="material-icons prefix">account_circle</i>
-                                <input name="lastname" type="text" <?php if(!$status){ echo 'value="'.$lastname.'"'; } ?> class="validate">
-                                <label for="lastname">Last Name</label>
-                            </div>   
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s6 offset-s3">
-                                <i class="material-icons prefix">email</i>
-                                <input name="email" type="email" <?php if(!$status){ echo 'value="'.$email.'"'; } ?> class="validate">
-                                <label for="email">Email</label>
                             </div>   
                         </div>
                         <div class="row">
