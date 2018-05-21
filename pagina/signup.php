@@ -5,34 +5,17 @@ $status = true;
 
 
 if(isset($_POST['submit']) && $_SERVER['REQUEST_METHOD'] == 'POST'){
-    $errores = array();
     $usuario = $_POST['username'];
     $password = $_POST['password'];
     $firstname = $_POST['firstname'];
     $lastname = $_POST['lastname'];
     $email = $_POST['email'];
 
+    $errores = validate_form_signup($usuario, $password, $firstname, $lastname, $email);
 
-    // El nombre y contraseña son campos obligatorios
-    if($usuario == ''){
-        $errores[] = "El usuario es requerido";
-    }
-    if($password = '' || strlen($password) < 5){
-        $errores[] = "La contraseña es requerida y ha de ser mayor a 5 caracteres:";
-    }
-    if($firstname == ''){
-        $errores[] = "El nombre es requerido";
-    }
-    if($lastname == ''){
-        $errores[] = "El apellido es requerido";
-    }
-    // El email es obligatorio y ha de tener formato adecuado
-    if(!validate_email_regex($email) || $email == ''){
-        $errores[] = "No se ha indicado email o el formato no es correcto";
-    }
     // Si el array $errores está vacío, se aceptan los datos y se asignan a variables
     if(sizeof($errores) == 0) {
-        //crear_usuario();
+        create_user();
         echo "Enviado";
         $status = true;
     }else{
