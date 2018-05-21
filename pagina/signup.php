@@ -27,7 +27,7 @@ if(isset($_POST['submit']) && $_SERVER['REQUEST_METHOD'] == 'POST'){
         $errores[] = "El apellido es requerido";
     }
     // El email es obligatorio y ha de tener formato adecuado
-    if(!foo($email) || $email == ''){
+    if(!validate_email_regex($email) || $email == ''){
         $errores[] = "No se ha indicado email o el formato no es correcto";
     }
     // Si el array $errores está vacío, se aceptan los datos y se asignan a variables
