@@ -39,13 +39,26 @@ function validate_form_signup($usuario, $password, $firstname, $lastname, $email
 }
 
 
+/* Tratamiento BBDD */
 
+function conect_bbdd(){
+	$conexion = mysqli_connect("localhost", "root", "", "dsi") or
+    	die("Problemas con la conexión");
 
+    return $conexion;
+}
 
+function disconect_bbdd($conexion){
+	mysqli_close($conexion);
+}
 
+function create_user($usuario, $password, $firstname, $lastname, $email){
+	$conexion = conect_bbdd();
 
-/* BBDD */
-function create_user(){
+	mysqli_query($conexion, "insert into User(Usu_name,Usu_pass,Usu_firstname,Usu_lastname,Usu_email) values ('$usuario','$password','$firstname','$lastname','$email')") or
+  		die("Problemas en el select".mysqli_error($conexion));
+
+	disconect_bbdd($conexion);
 	return true;
 }
 
