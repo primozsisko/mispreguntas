@@ -61,6 +61,8 @@ if(isset($_POST['submit']) && $_SERVER['REQUEST_METHOD'] == 'POST'){
 <br>
         <div class="container">
 
+            <div class="row" style="background: orange; padding:5px; text-align: center;">LOGIN ERROR</div>
+
             <div class="row">
 
                 <form class="col s12" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">

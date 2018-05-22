@@ -70,13 +70,25 @@ function validate_user($usuario, $password){
 
 	if ($reg = mysqli_fetch_array($registros)){
 		disconect_bbdd($conexion);
-		
+		session_start();
+		$_SESSION['user'] = $usuario;
+		$_SESSION['platform'] = 'quizzer';
 		return true;
-
 	}else{
 		disconect_bbdd($conexion);
+		//header("Location: loginerror.php"); // Incluir página error.
 		return false;
 	}
+}
+
+function delete_profile($usuario){
+	$conexion = conect_bbdd();
+
+	mysqli_query($conexion, "delete from User where Usu_name='".$usuario."'") or
+  		die("Problemas en el select".mysqli_error($conexion));
+
+	disconect_bbdd($conexion);
+	return true;
 }
 
 ?>
