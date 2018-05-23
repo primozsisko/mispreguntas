@@ -136,7 +136,7 @@ if(isset($_POST['submit']) && $_SERVER['REQUEST_METHOD'] == 'POST'){
                             <li><a class="white-text" href="index.php">Home</a></li>
                             <li><a class="white-text" href="about.php">About</a></li>
                             <li><a class="white-text" href="quizzes.php">Quizzes</a></li>
-                            <li><a href="ContactUs.php">Contact Us</a></li>
+                            <li><a class="white-text" href="ContactUs.php">Contact Us</a></li>
                             <li><a class="white-text" href="login.php">Log in</a></li>
                         </ul>
                     </div>
