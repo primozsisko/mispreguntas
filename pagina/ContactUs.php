@@ -1,23 +1,25 @@
 <?php
 include_once 'controller.php';
 
-if(isset($_POST['submit']) && $_SERVER['REQUEST_METHOD'] == 'POST'){
-    $usuario = $_POST['username'];
-    $password = $_POST['password'];
-
-    if($usuario != '' && $password != '') {
-        if(validate_user($usuario, $password)){
-            //echo "Validado correctamente";
-            header("Location: loggeduser.php");
-        }else{
-            //echo "Error: En usuario o contraseña";
-            echo "<div class='row' style='margin-bottom:0px; background: orange; padding:5px; text-align: center;'><b>Error: En usuario o contraseña.</b></div>";
-        }        
+if(isset($_POST['submit']) && $_SERVER['REQUEST_METHOD']=='POST'){
+    $subject = $_POST['subject'];
+    $body =$_POST['body'];
+    $head = $_POST['email'];
+    if(validate_email($subject, $body, $head)){
+        include 'mail.php';
+        $to = "alu0101013534@ull.edu.es";
+        $headers = array(
+        "From: ".$head);
+        $sendMail       = new SendMail();
+        $sendMailFacade = new sendMailFacade($sendMail);
+        $sendMailFacade->setTo($to)->setSubject($subject)->setBody($body)->setHeaders($headers)->send();
+     
+        echo "<script type='text/javascript'>alert('Gracias por contactar con nosotros !!');</script>";
     }else{
-        //echo "Error: No puedes dejar campos vacios.<br>";
-        echo "<div class='row' style='margin-bottom:0px; background: orange; padding:5px; text-align: center;'><b>Error: No puedes dejar campos vacios.</b></div>";
+        echo "<script type='text/javascript'>alert('Error: no puede quedar campos vacios.');</script>";
     }
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -41,6 +43,7 @@ if(isset($_POST['submit']) && $_SERVER['REQUEST_METHOD'] == 'POST'){
                     <li><a href="index.php">Home</a></li>
                     <li><a href="about.php">About</a></li>
                     <li><a href="quizzes.php">Quizzes</a></li>
+                    <li><a href="ContactUs.php">Contact Us</a></li>
                     <li><a href="login.php">Log in</a></li>
                 </ul>
 
@@ -48,40 +51,44 @@ if(isset($_POST['submit']) && $_SERVER['REQUEST_METHOD'] == 'POST'){
                     <li><a href="index.php">Home</a></li>
                     <li><a href="about.php">About</a></li>
                     <li><a href="quizzes.php">Quizzes</a></li>
+                    <li><a href="ContactUs.php">Contact Us</a></li>
                     <li><a href="login.php">Log in</a></li>
                 </ul>
                 <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             </div>
         </nav>
 
-
-
-
- <h2 class="header center green-text green-lighten-2">Log In</h2>
+ <h2 class="header center green-text green-lighten-2">Contact Us</h2>
 <br>
         <div class="container">
-
-            <div class="row" style="background: orange; padding:5px; text-align: center;">LOGIN ERROR</div>
 
             <div class="row">
 
                 <form class="col s12" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
-                    <div class="row">
+                    <div class="row"> 
+                        <div class="row">
+                            <div class="input-field col s6 offset-s3">
+                                <i class="material-icons prefix">email</i>
+                                <input id="email" name="email" type="email" class="validate">
+                                <label for="email">Email</label>
+                            </div>   
+                        </div>
                         <div class="row">
                             <div class="input-field col s6 offset-s3">
                                 <i class="material-icons prefix">account_circle</i>
-                                <input id="username" name="username" type="text" class="validate">
-                                <label for="username">User Name</label>
+                                <input id="subject" name="subject" type="text" class="validate">
+                                <label for="subject">Subject</label>
                             </div> 
                         </div> 
                         <div class="row">
                             <div class="input-field col s6 offset-s3">
-                                <i class="material-icons prefix">lock</i>
-                                <input id="password" name="password" type="password" class="validate">
-                                <label for="password">Password</label>
+                             <i class="material-icons prefix">mode_edit</i>
+           <textarea id="body" name="body" class="materialize-textarea"></textarea>
+          <label for="body">Body</label>
                             </div>   
                         </div>
-                        <div class="row">
+                      
+                        <div class="row center">
                             <div class="input-field col s6 offset-s3">
                                 <button class="btn  green-effect green" type="submit" name="submit">Submit
                                     <i class="material-icons right">send</i>
@@ -90,6 +97,9 @@ if(isset($_POST['submit']) && $_SERVER['REQUEST_METHOD'] == 'POST'){
                         </div>
                     </div>
                 </form>
+                
+                
+                
             </div>
 
         </div>
@@ -106,6 +116,7 @@ if(isset($_POST['submit']) && $_SERVER['REQUEST_METHOD'] == 'POST'){
                             <li><a class="white-text" href="index.php">Home</a></li>
                             <li><a class="white-text" href="about.php">About</a></li>
                             <li><a class="white-text" href="quizzes.php">Quizzes</a></li>
+                            <li><a class="white-text" href="ContactUs.php">Contact Us</a></li>
                             <li><a class="white-text" href="login.php">Log in</a></li>
                         </ul>
                     </div>

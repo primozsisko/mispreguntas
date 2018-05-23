@@ -1,3 +1,13 @@
+<?php
+include_once 'controller.php';
+/* Comprobar que se ha logeado, sino devolver a login */
+secure_user();
+
+if(isset($_POST['logout'])){
+	disconect_user();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -14,19 +24,23 @@
     </head>
     <body>
         <nav class="green darken-1" role="navigation">
-            <div class="nav-wrapper container"><a id="logo-container" href="index.html" class="brand-logo">QUIZZER</a>
+            <div class="nav-wrapper container"><a id="logo-container" href="loggeduser.php" class="brand-logo">QUIZZER</a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="quizzes.html">Quizzes</a></li>
-                    <li><a href="login.html">Log in</a></li>
+                    <li style="margin-left: 5px; margin-right: 5px;"><b>User: <?php echo $_SESSION['user']; ?></b></li>
+                    <li>
+                    	<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+							<button class="btn btn-small waves-effect waves-light green darken-1" type="submit" name="logout">Log out</button>
+						</form>
+                    </li>
                 </ul>
 
                 <ul id="nav-mobile" class="sidenav">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="quizzes.html">Quizzes</a></li>
-                    <li><a href="login.html">Log in</a></li>
+                    <li style="margin-left: 5px; margin-right: 5px;"><b>User: <?php echo $_SESSION['user']; ?></b></li>
+                    <li>
+                    	<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+							<button class="btn btn-small waves-effect waves-light green darken-1" type="submit" name="logout">Log out</button>
+						</form>
+                    </li>
                 </ul>
                 <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             </div>
@@ -121,12 +135,9 @@
                         <p class="grey-text text-lighten-4">We are a team of 3 college students working on this project for the IT systems development subject.</p>
                     </div>
                     <div class="col l3 s12">
-                        <h5 class="white-text">Links</h5>
+                        <h5 class="white-text"></h5>
                         <ul>
-                            <li><a class="white-text" href="index.html">Home</a></li>
-                            <li><a class="white-text" href="about.html">About</a></li>
-                            <li><a class="white-text" href="quizzes.html">Quizzes</a></li>
-                            <li><a class="white-text" href="login.html">Log in</a></li>
+                            <li></li>
                         </ul>
                     </div>
                 </div>

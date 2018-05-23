@@ -16,20 +16,17 @@ if(isset($_POST['submit']) && $_SERVER['REQUEST_METHOD'] == 'POST'){
     // Si el array $errores está vacío, se aceptan los datos y se asignan a variables
     if(sizeof($errores) == 0) {
         create_user($usuario, $password, $firstname, $lastname, $email);
-        echo "Enviado";
         $status = true;
+        header("Location: login.php");
     }else{
         $status = false;
-        echo "Errores en el Formato:<br>";
+        echo "<div class='row' style='margin-bottom:0px; background: orange; padding:5px; text-align: left;'><b>Errores en el Formato:<br>";
         foreach ($errores as $error){
             echo "<li> $error </li>";
         }
+        echo "</b></div>";
     }
 }
-
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -48,19 +45,21 @@ if(isset($_POST['submit']) && $_SERVER['REQUEST_METHOD'] == 'POST'){
     </head>
     <body>
         <nav class="green darken-1" role="navigation">
-            <div class="nav-wrapper container"><a id="logo-container" href="index.html" class="brand-logo">QUIZZER</a>
+            <div class="nav-wrapper container"><a id="logo-container" href="index.php" class="brand-logo">QUIZZER</a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="quizzes.html">Quizzes</a></li>
-                    <li><a href="login.html">Log in</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="about.php">About</a></li>
+                    <li><a href="quizzes.php">Quizzes</a></li>
+                    <li><a href="ContactUs.php">Contact Us</a></li>
+                    <li><a href="login.php">Log in</a></li>
                 </ul>
 
                 <ul id="nav-mobile" class="sidenav">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="quizzes.html">Quizzes</a></li>
-                    <li><a href="login.html">Log in</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="about.php">About</a></li>
+                    <li><a href="quizzes.php">Quizzes</a></li>
+                    <li><a href="ContactUs.php">Contact Us</a></li>
+                    <li><a href="login.php">Log in</a></li>
                 </ul>
                 <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             </div>
@@ -112,7 +111,7 @@ if(isset($_POST['submit']) && $_SERVER['REQUEST_METHOD'] == 'POST'){
                                 <label for="email">Email</label>
                             </div>   
                         </div>
-                        <div class="row">
+                        <div class="row center">
                             <div class="input-field col s6 offset-s3">
                                 <button class="btn  green-effect green" type="submit" name="submit">Submit
                                     <i class="material-icons right">send</i>
@@ -134,10 +133,11 @@ if(isset($_POST['submit']) && $_SERVER['REQUEST_METHOD'] == 'POST'){
                     <div class="col l3 s12">
                         <h5 class="white-text">Links</h5>
                         <ul>
-                            <li><a class="white-text" href="index.html">Home</a></li>
-                            <li><a class="white-text" href="about.html">About</a></li>
-                            <li><a class="white-text" href="quizzes.html">Quizzes</a></li>
-                            <li><a class="white-text" href="login.html">Log in</a></li>
+                            <li><a class="white-text" href="index.php">Home</a></li>
+                            <li><a class="white-text" href="about.php">About</a></li>
+                            <li><a class="white-text" href="quizzes.php">Quizzes</a></li>
+                            <li><a href="ContactUs.php">Contact Us</a></li>
+                            <li><a class="white-text" href="login.php">Log in</a></li>
                         </ul>
                     </div>
                 </div>

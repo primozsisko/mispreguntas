@@ -1,7 +1,7 @@
 <?php
 include_once 'controller.php';
-
 /* Comprobar que se ha logeado, sino devolver a login */
+secure_user();
 
 if(isset($_POST['borrar'])){
 	session_start();
@@ -14,6 +14,10 @@ if(isset($_POST['borrar'])){
         //echo "Error: No puedes dejar campos vacios.<br>";
         echo "<div class='row' style='margin-bottom:0px; background: orange; padding:5px; text-align: center;'><b>Error: No se pudo eliminar la cuenta.</b></div>";
     }
+}
+
+if(isset($_POST['logout'])){
+	disconect_user();
 }
 ?>
 
@@ -34,19 +38,23 @@ if(isset($_POST['borrar'])){
     </head>
     <body>
         <nav class="green darken-1" role="navigation">
-            <div class="nav-wrapper container"><a id="logo-container" href="index.html" class="brand-logo">QUIZZER</a>
+            <div class="nav-wrapper container"><a id="logo-container" href="loggeduser.php" class="brand-logo">QUIZZER</a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="quizzes.html">Quizzes</a></li>
-                    <li><a href="login.html">Log in</a></li>
+                    <li style="margin-left: 5px; margin-right: 5px;"><b>User: <?php echo $_SESSION['user']; ?></b></li>
+                    <li>
+                    	<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+							<button class="btn btn-small waves-effect waves-light green darken-1" type="submit" name="logout">Log out</button>
+						</form>
+                    </li>
                 </ul>
 
                 <ul id="nav-mobile" class="sidenav">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="quizzes.html">Quizzes</a></li>
-                    <li><a href="login.html">Log in</a></li>
+                    <li style="margin-left: 5px; margin-right: 5px;"><b>User: <?php echo $_SESSION['user']; ?></b></li>
+                    <li>
+                    	<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+							<button class="btn btn-small waves-effect waves-light green darken-1" type="submit" name="logout">Log out</button>
+						</form>
+                    </li>
                 </ul>
                 <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             </div>
@@ -57,11 +65,11 @@ if(isset($_POST['borrar'])){
 				<i class="large material-icons grey-text text-lighten-2">account_circle</i> 
 			</div>
 			<div>
-				<h6 class="header center green-text text-lighten-2">Name and surname</h6>
+				<h6 class="header center green-text text-lighten-2">User: <?php echo $_SESSION['user']; ?></h6>
 			</div>	
 			</br>
 			<div>
-				<a href= "#" class="btn btn-small waves-effect waves-light green darken-1">Create new quiz</a>
+				<a href= "addquiz.php" class="btn btn-small waves-effect waves-light green darken-1">Create new quiz</a>
 			</div> 
 			</br>
 		</div>
@@ -86,21 +94,21 @@ if(isset($_POST['borrar'])){
 						<tbody>
 						  <tr>
 							<td>Data bases</td>
-							<td> <a href= "#"> <i class="small material-icons green-text text-darken-1">edit</i> </a></td>
+							<td> <a href= "updatequiz.php"> <i class="small material-icons green-text text-darken-1">edit</i> </a></td>
 							<td> <a href= "#"> <i class="small material-icons green-text text-darken-1">delete_forever</i> </a></td>
-							<td> <a href= "#"> <i class="small material-icons green-text text-darken-1">pageview</i> </a></td>
+							<td> <a href= "solveqiuz.php"> <i class="small material-icons green-text text-darken-1">pageview</i> </a></td>
 						  </tr>
 						  <tr>
 							<td>Statistics </td>
-							<td> <a href= "#"> <i class="small material-icons green-text text-darken-1">edit</i> </a></td>
+							<td> <a href= "updatequiz.php"> <i class="small material-icons green-text text-darken-1">edit</i> </a></td>
 							<td> <a href= "#"> <i class="small material-icons green-text text-darken-1">delete_forever</i> </a></td>
-							<td> <a href= "#"> <i class="small material-icons green-text text-darken-1">pageview</i> </a></td>
+							<td> <a href= "solveqiuz.php"> <i class="small material-icons green-text text-darken-1">pageview</i> </a></td>
 						  </tr>
 						  <tr>
 							<td>Spanish 1</td>
-							<td> <a href= "#"> <i class="small material-icons green-text text-darken-1">edit</i> </a></td>
+							<td> <a href= "updatequiz.php"> <i class="small material-icons green-text text-darken-1">edit</i> </a></td>
 							<td> <a href= "#"> <i class="small material-icons green-text text-darken-1">delete_forever</i> </a></td>
-							<td> <a href= "#"> <i class="small material-icons green-text text-darken-1">pageview</i> </a></td>
+							<td> <a href= "solveqiuz.php"> <i class="small material-icons green-text text-darken-1">pageview</i> </a></td>
 						  </tr>
 						</tbody>
 					</table>
@@ -118,17 +126,17 @@ if(isset($_POST['borrar'])){
 					  <tr>
 						<td>Mathematics part 1</td>
 						<td>96%</td>
-						<td> <a href= "#"> <i class="small material-icons green-text text-darken-1">pageview</i> </a></td>
+						<td> <a href= "quizinfo.php"> <i class="small material-icons green-text text-darken-1">pageview</i> </a></td>
 					  </tr>
 					  <tr>
 						<td>Programming 1</td>
 						<td>49%</td>
-						<td> <a href= "#"> <i class="small material-icons green-text text-darken-1">pageview</i> </a></td>
+						<td> <a href= "quizinfo.php"> <i class="small material-icons green-text text-darken-1">pageview</i> </a></td>
 					  </tr>
 					  <tr>
 						<td>Mathematics part 2</td>
 						<td>76%</td>
-						<td> <a href= "#"> <i class="small material-icons green-text text-darken-1">pageview</i> </a></td>
+						<td> <a href= "quizinfo.php"> <i class="small material-icons green-text text-darken-1">pageview</i> </a></td>
 					  </tr>
 					</tbody>
 					</table>
@@ -159,12 +167,9 @@ if(isset($_POST['borrar'])){
                         <p class="grey-text text-lighten-4">We are a team of 3 college students working on this project for the IT systems development subject.</p>
                     </div>
                     <div class="col l3 s12">
-                        <h5 class="white-text">Links</h5>
+                        <h5 class="white-text"></h5>
                         <ul>
-                            <li><a class="white-text" href="index.html">Home</a></li>
-                            <li><a class="white-text" href="about.html">About</a></li>
-                            <li><a class="white-text" href="quizzes.html">Quizzes</a></li>
-                            <li><a class="white-text" href="login.html">Log in</a></li>
+                            <li></li>
                         </ul>
                     </div>
                 </div>

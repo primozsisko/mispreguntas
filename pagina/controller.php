@@ -38,6 +38,14 @@ function validate_form_signup($usuario, $password, $firstname, $lastname, $email
     return $errores;
 }
 
+function validate_email($subject, $body, $head){
+	// Campos obligatorios.
+    if($subject == '' || $body == '' || $head == ''){
+        return false;
+    }
+    return true;
+}
+
 
 /* Tratamiento BBDD */
 
@@ -81,6 +89,12 @@ function validate_user($usuario, $password){
 	}
 }
 
+function disconect_user(){
+	session_start();
+	session_destroy(); // Eliminamos la sesión.
+	header("Location: login.php");
+}
+
 function delete_profile($usuario){
 	$conexion = conect_bbdd();
 
@@ -88,7 +102,18 @@ function delete_profile($usuario){
   		die("Problemas en el select".mysqli_error($conexion));
 
 	disconect_bbdd($conexion);
+	session_start();
+	session_destroy(); // Eliminamos la sesión.
 	return true;
+}
+
+function secure_user(){
+	@session_start();
+	if($_SESSION['platform'] != 'quizzer'){ 
+	  //Si no hay sesión activa, lo direccionamos al index.php (inicio de sesión) 
+	  header("Location: login.php"); 
+	  exit(); 
+	} 
 }
 
 ?>

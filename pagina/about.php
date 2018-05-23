@@ -14,19 +14,21 @@
     </head>
     <body>
         <nav class="green darken-1" role="navigation">
-            <div class="nav-wrapper container"><a id="logo-container" href="index.html" class="brand-logo">QUIZZER</a>
+            <div class="nav-wrapper container"><a id="logo-container" href="index.php" class="brand-logo">QUIZZER</a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="quizzes.html">Quizzes</a></li>
-                    <li><a href="login.html">Log in</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="about.php">About</a></li>
+                    <li><a href="quizzes.php">Quizzes</a></li>
+                    <li><a href="ContactUs.php">Contact Us</a></li>
+                    <li><a href="login.php">Log in</a></li>
                 </ul>
 
                 <ul id="nav-mobile" class="sidenav">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="quizzes.html">Quizzes</a></li>
-                    <li><a href="login.html">Log in</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="about.php">About</a></li>
+                    <li><a href="quizzes.php">Quizzes</a></li>
+                    <li><a href="ContactUs.php">Contact Us</a></li>
+                    <li><a href="login.php">Log in</a></li>
                 </ul>
                 <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             </div>
@@ -60,10 +62,11 @@
                     <div class="col l3 s12">
                         <h5 class="white-text">Links</h5>
                         <ul>
-                            <li><a class="white-text" href="index.html">Home</a></li>
-                            <li><a class="white-text" href="about.html">About</a></li>
-                            <li><a class="white-text" href="quizzes.html">Quizzes</a></li>
-                            <li><a class="white-text" href="login.html">Log in</a></li>
+                            <li><a class="white-text" href="index.php">Home</a></li>
+                            <li><a class="white-text" href="about.php">About</a></li>
+                            <li><a class="white-text" href="quizzes.php">Quizzes</a></li>
+                            <li><a href="ContactUs.php">Contact Us</a></li>
+                            <li><a class="white-text" href="login.php">Log in</a></li>
                         </ul>
                     </div>
                 </div>
