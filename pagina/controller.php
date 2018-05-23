@@ -89,23 +89,7 @@ function validate_user($usuario, $password){
 	}
 }
 
-function disconect_user(){
-	session_start();
-	session_destroy(); // Eliminamos la sesión.
-	header("Location: login.php");
-}
 
-function delete_profile($usuario){
-	$conexion = conect_bbdd();
-
-	mysqli_query($conexion, "delete from User where Usu_name='".$usuario."'") or
-  		die("Problemas en el select".mysqli_error($conexion));
-
-	disconect_bbdd($conexion);
-	session_start();
-	session_destroy(); // Eliminamos la sesión.
-	return true;
-}
 
 function secure_user(){
 	@session_start();
@@ -115,5 +99,80 @@ function secure_user(){
 	  exit(); 
 	} 
 }
+
+
+
+function disconect_user($usuario){
+
+    $user = new Commandee($usuario);
+    $logout = new disconnectCommand($user);
+    callCommand($logout);
+}
+
+function delete_profile($usuario){
+    $user = new Commandee($usuario);
+    $delete = new deleteProfileCommand($user);
+    callCommand($delete);
+    return true;
+}
+
+
+
+class Commandee {
+    private $user;
+    function __construct($user_in) {
+        $this->setUser($user_in);
+    }
+    function getUser() {
+        return $this->user;
+    }
+    function setUser($user_in) {
+        $this->user = $user_in;
+    }
+    function disconect_user() {
+        session_start();
+	   session_destroy(); // Eliminamos la sesión.
+	   header("Location: login.php");
+
+    }
+    function delete_profile() {
+        $conexion = conect_bbdd();
+
+        mysqli_query($conexion, "delete from User where Usu_name='".$this->user."'") or
+            die("Problemas en el select".mysqli_error($conexion));
+
+        disconect_bbdd($conexion);
+       // session_start();
+        session_destroy(); // Eliminamos la sesión.
+        return true;
+    }
+    
+}
+
+
+abstract class Command {
+    protected $Commandee;
+    function __construct($Commandee_in) {
+        $this->Commandee = $Commandee_in;
+    }
+    abstract function execute();
+}
+
+class deleteProfileCommand extends Command {
+    function execute() {
+        $this->Commandee->delete_profile();
+    }
+}
+
+class disconnectCommand extends Command {
+    function execute() {
+        $this->Commandee->disconect_user();
+    }
+}
+
+
+function callCommand(Command $Command_in) {
+    $Command_in->execute();
+  }
 
 ?>
